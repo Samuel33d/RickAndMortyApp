@@ -43,7 +43,7 @@ const CharacterModal = ({ residents, showModal, setShowModal }) => {
                 <li className="text-white sm:text-[1rem]">
                   {residents?.location.name}
                 </li>
-                <li>First Appearance:</li>
+                <li>First Appearance EP:</li>
                 <li className="text-white sm:text-[1rem]">{episode?.name}</li>
                 <li>Air Date Episode:</li>
                 <li className="text-white text-[1rem]">{episode?.air_date}</li>
