@@ -25,8 +25,11 @@ const Location = ({ location, setLocation }) => {
   };
 
   return (
-    <section className="text-center items-center  sm:flex  flex-col gap-10 px-1 bg-[url('/bg-header.jpg')] ">
-      <form className="form grid grid-cols-[1fr,auto] relative sm:w-[619px]  mx-auto w-[300px]">
+    <section className=" text-center items-center  sm:flex  flex-col gap-10 px-1 bg-[url('/bg-header.jpg')] bg-contain">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="form grid grid-cols-[1fr,auto] relative sm:w-[619px]  mx-auto w-[300px]"
+      >
         <input
           type="text"
           value={text}
@@ -34,7 +37,6 @@ const Location = ({ location, setLocation }) => {
           name="locationName"
           onChange={handleInput}
           onClick={() => setText("")}
-          required
           autoComplete="off"
           placeholder="Type a location name..."
         />
@@ -42,7 +44,7 @@ const Location = ({ location, setLocation }) => {
           className={`${text === "" ? "hidden" : "flex"} ${
             text.length > 6 ? "hidden" : "flex"
           } 
-          absolute top-10 border-[1px] border-[#8EFF8B] bg-black/90  text-white flex flex-col z-10 h-32 w-[18.76rem] text-[.7rem]  sm:w-[28rem] sm:text-lg overflow-y-scroll gap-4 py-3 shadowbox`}
+          absolute top-12 border-[1px] border-[#8EFF8B] bg-black/90  text-white flex flex-col z-10 h-32 w-[18.76rem] text-[.7rem]  sm:w-full sm:text-lg overflow-y-scroll gap-4 py-3 shadowbox`}
         >
           {newLocation?.map((location) => (
             <option

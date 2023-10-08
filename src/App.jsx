@@ -22,14 +22,14 @@ function App() {
   }, []);
 
   return (
-    <main className="bg-black text-white ">
+    <main className=" text-white ">
       {location === null ? (
         <Load />
       ) : (
         <>
           <header className="overflow-hidden px-2 relative flex justify-center bg-[url('/bg-header.jpg')] sm:h-[380px] h-[280px] bg-cover ">
             <img
-              className="spin absolute top-[-8.5rem] h-[340px] w-[300px] sm:top-[-14rem]  sm:w-[550px] sm:h-[550px]"
+              className="spin absolute top-[-8.5rem] h-[340px] w-[340px] sm:top-[-14rem]  sm:w-[550px] sm:h-[550px]"
               src="/logo2.png"
               alt=""
             />

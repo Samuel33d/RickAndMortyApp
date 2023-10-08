@@ -13,7 +13,7 @@ const Pagination = ({ residents }) => {
   return (
     <>
       {" "}
-      <section className=" py-8 grid grid-cols-[repeat(auto-fit,300px)] justify-center gap-12  md:grid-cols-[repeat(2,350px)] ">
+      <section className=" py-8 grid grid-cols-[repeat(auto-fit,300px)] place-content-center gap-12  md:grid-cols-[repeat(2,350px)]">
         {residentsInPage.map((resident) => (
           <ResidentCard key={resident} residentEndpoint={resident} />
         ))}

@@ -50,3 +50,32 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.overlay {
+    background-color: rgba(142, 255, 139, .5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+header:hover>.overlay {
+    top: 0;
+}
+
+.card {
+    animation: trasladation .5s;
+
+}
+
+@keyframes trasladation {
+    0% {
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
