@@ -17,11 +17,8 @@ const CharacterModal = ({ residents, showModal, setShowModal }) => {
   return (
     <>
       {showModal ? (
-        <div
-          className="absolute  min-h-[100vh] min-w-full z-60 bg-black/80 grid place-items-center top-30 left-0 "
-          onClick={() => setShowModal(!showModal)}
-        >
-          <div className="card border-2 border-[#8EFF8B] bg-black/80 max-w-[300px] sm:max-w-[400px] max-h-auto absolute">
+        <div className="absolute  min-h-[100vh] min-w-full z-60 bg-black/80 grid place-items-center top-30 left-0">
+          <div className="card border-2 border-[#8EFF8B] bg-black/80 max-w-[300px] sm:max-w-[400px] max-h-auto absolute ">
             <div className="relative">
               <img src={residents?.image} alt="" />
               <div
@@ -33,11 +30,11 @@ const CharacterModal = ({ residents, showModal, setShowModal }) => {
             </div>
 
             <div className="p-4 ">
-              <h3 className="text-2xl pb-2 border-b-[1px] border-[#0849517d]">
+              <h3 className="text-2xl font-bold pb-2 border-b-[1px] border-[#0849517d]">
                 {residents?.name}
               </h3>
 
-              <ul className="grid grid-cols-[auto_auto] text-[#938686] gap-2 text-[.8rem] py-3">
+              <ul className="grid grid-cols-[auto_auto] text-[#938686] gap-2 sm:gap-4 text-[.9rem] py-3">
                 <li className="">Gender:</li>
                 <li className="text-white sm:text-[1rem]">
                   {residents?.gender}

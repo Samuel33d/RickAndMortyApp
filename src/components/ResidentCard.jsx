@@ -16,7 +16,7 @@ const ResidentCard = ({ residentEndpoint }) => {
 
   const handleModal = () => {
     setShowModal(!showModal);
-    console.log(resident);
+
   };
 
   return (
