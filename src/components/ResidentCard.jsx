@@ -24,7 +24,7 @@ const ResidentCard = ({ residentEndpoint }) => {
       <article className="translate transition-transform  border-[1px] border-[#8EFF8B] bg-transparent">
         <header className="header overflow-hidden relative border-b-[1px] border-[#8EFF8B]">
           <img src={resident?.image} alt="" />
-          <div className="overlay " onClick={handleModal}>
+          <div className="cursor-pointer overlay " onClick={handleModal}>
             <IconEye className="animate-bounce" size={56} />
           </div>
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/70 border-2 border-[#8EFF8B]  px-8 py-1  flex justify-center items-center gap-3 ">
@@ -33,11 +33,14 @@ const ResidentCard = ({ residentEndpoint }) => {
                 characterStatus[resident?.status]
               } rounded-full`}
             ></div>
-            <span className="text-sm font-bold ">{resident?.status}</span>
+            <span className="text-sm font-bold">{resident?.status}</span>
           </div>
         </header>
         <div>
-          <h3 className="text-2xl font-bold p-4 pb-1 border-b-[1px] border-[#0849517d] hover:text-[#8EFF8B] transition-colors">
+          <h3
+            onClick={handleModal}
+            className="cursor-pointer text-2xl font-bold p-4 pb-1 border-b-[1px] border-[#0849517d] hover:text-[#8EFF8B] transition-colors"
+          >
             {resident?.name}
           </h3>
         </div>
