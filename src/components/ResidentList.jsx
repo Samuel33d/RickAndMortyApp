@@ -15,7 +15,7 @@ const ResidentList = ({ residents }) => {
             residents.length > 1
               ? "bg-[url('/bg-main.jpg')]"
               : "bg-[url('/bg-header.jpg')]"
-          } bg-right-top sm:bg-contain`}
+          } bg-right-top sm:bg-cover sm:bg `}
         >
           <Pagination residents={residents} />
         </section>
