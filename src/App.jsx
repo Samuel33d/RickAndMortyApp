@@ -34,7 +34,7 @@ function App() {
               alt=""
             />
             <img
-              className="absolute top-0 object-cover sm:object-none h-[330px] object- sm:h-[490px]"
+              className="absolute top-0 object-cover sm:object-fill md:object-contain h-[330px] object- sm:h-[490px]"
               src="/Ellipse.png"
               alt=""
             />

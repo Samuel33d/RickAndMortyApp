@@ -28,7 +28,7 @@ const Location = ({ location, setLocation }) => {
     <section className=" text-center items-center  sm:flex  flex-col gap-10 px-1 bg-[url('/bg-header.jpg')] bg-contain">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="form grid  relative sm:w-[619px]  mx-auto w-[300px]"
+        className="form grid  relative sm:w-[600px]  mx-auto w-[300px]"
       >
         <input
           type="text"
@@ -44,11 +44,11 @@ const Location = ({ location, setLocation }) => {
           className={`${text === "" ? "hidden" : "flex"} ${
             text.length > 6 ? "hidden" : "flex"
           } 
-          absolute top-12 border-[1px] border-[#8EFF8B] bg-black/90  text-white flex flex-col z-10 h-32 w-[18.76rem] text-[.7rem]  sm:w-full sm:text-lg overflow-y-scroll gap-4 py-3 shadowbox`}
+          absolute top-12 border-[1px] border-[#8EFF8B] bg-black/90  text-white flex flex-col z-10 h-32 sm:h-42 w-[18.76rem] text-[.7rem]  sm:w-full sm:text-lg overflow-y-scroll gap-4 py-4 px-3 shadowbox`}
         >
           {newLocation?.map((location) => (
             <option
-              className=" sm:border-none w-[full] cursor-pointer "
+              className="hover:text-[#8EFF8B] cursor-pointer w-full "
               key={location.name}
               value={location.name}
               onClick={handleInput}

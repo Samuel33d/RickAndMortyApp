@@ -65,17 +65,17 @@ header:hover>.overlay {
 }
 
 .card {
-    animation: trasladation .5s;
+    animation: translate .4s;
 
 }
 
-@keyframes trasladation {
+@keyframes translate {
     0% {
-        transform: translateY(-2rem);
+        transform: scale(0);
     }
 
     100% {
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
 
