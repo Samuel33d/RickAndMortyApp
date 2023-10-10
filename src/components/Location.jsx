@@ -28,7 +28,7 @@ const Location = ({ location, setLocation }) => {
     <section className=" text-center items-center  sm:flex  flex-col gap-10 px-1 bg-[url('/bg-header.jpg')] bg-contain">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="form grid grid-cols-[1fr,auto] relative sm:w-[619px]  mx-auto w-[300px]"
+        className="form grid  relative sm:w-[619px]  mx-auto w-[300px]"
       >
         <input
           type="text"
@@ -48,7 +48,7 @@ const Location = ({ location, setLocation }) => {
         >
           {newLocation?.map((location) => (
             <option
-              className=" ] sm:border-none w-[full]"
+              className=" sm:border-none w-[full] cursor-pointer "
               key={location.name}
               value={location.name}
               onClick={handleInput}
