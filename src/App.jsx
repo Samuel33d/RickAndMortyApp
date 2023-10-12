@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Location from "./components/Location";
 import Load from "./components/Load";
 import ResidentList from "./components/ResidentList";
+import Header from "./components/Header";
 
 function App() {
   const [location, setLocation] = useState(null);
@@ -27,23 +28,7 @@ function App() {
         <Load />
       ) : (
         <>
-          <header className="overflow-hidden object-center px-2 relative flex justify-center bg-[url('/bg-header.jpg')] sm:h-[380px] h-[280px] bg-cover ">
-            <img
-              className="spin absolute top-[-8.5rem] h-[340px] w-[340px] sm:top-[-14rem]  sm:w-[550px] sm:h-[550px]"
-              src="/logo2.png"
-              alt=""
-            />
-            <img
-              className="absolute top-0 object-cover sm:object-fill md:object-contain h-[330px] object- sm:h-[490px]"
-              src="/Ellipse.png"
-              alt=""
-            />
-            <img
-              className="absolute top-12 w-[320px] h-[100px] sm:w-[530px] sm:h-[180px] sm:top-16"
-              src="/nombre.png"
-              alt=""
-            />
-          </header>
+          <Header />
           <Location location={location} setLocation={setLocation} />
           <ResidentList residents={location.residents} />
         </>
