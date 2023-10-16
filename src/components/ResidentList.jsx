@@ -18,6 +18,7 @@ const ResidentList = ({ residents }) => {
           } bg-right-top sm:bg-cover  `}
         >
           <Pagination residents={residents} />
+          
         </section>
       )}
     </>

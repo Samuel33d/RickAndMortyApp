@@ -1,28 +1,50 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useDebounce from "./useDebounce";
 
 const Location = ({ location, setLocation }) => {
   const [text, setText] = useState("");
   const [newLocation, setNewLocation] = useState([]);
+  const debounceValue = useDebounce(text, 500);
 
   const handleInput = (e) => {
     setText(e.target.value);
-    const locationName = e.target.value;
 
+    // for (let i = 0; i < newLocation.length; i++) {
+    //   if (newLocation[i].name === debounceValue) {
+    //     axios
+    //       .get(
+    //         `https://rickandmortyapi.com/api/location/?name=${debounceValue}`
+    //       )
+    //       .then(({ data }) => {
+    //         setLocation(data.results[0]);
+    //       })
+    //       .catch((err) => console.log(err));
+    //   }
+    // }
+  };
+
+  useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/location/?name=${locationName}`)
-      .then(({ data }) => setNewLocation(data.results))
+      .get(`https://rickandmortyapi.com/api/location/?name=${debounceValue}`)
+      .then(({ data }) => {
+        setNewLocation(data.results);
+      })
       .catch((err) => console.log(err));
 
     for (let i = 0; i < newLocation.length; i++) {
-      if (newLocation[i].name === locationName) {
+      if (newLocation[i].name === debounceValue) {
         axios
-          .get(`https://rickandmortyapi.com/api/location/?name=${locationName}`)
-          .then(({ data }) => setLocation(data.results[0]))
+          .get(
+            `https://rickandmortyapi.com/api/location/?name=${debounceValue}`
+          )
+          .then(({ data }) => {
+            setLocation(data.results[0]);
+          })
           .catch((err) => console.log(err));
       }
     }
-  };
+  }, [debounceValue]);
 
   return (
     <section className=" text-center items-center  sm:flex  flex-col gap-10 px-1 bg-[url('/bg-header.jpg')] bg-contain">

@@ -2,22 +2,16 @@ import axios from "axios";
 import { IconEye } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { characterStatus } from "../constants/characters";
-import CharacterModal from "./CharacterModal";
 
-const ResidentCard = ({ residentEndpoint }) => {
+const ResidentCard = ({ residentEndpoint, handleModal }) => {
   const [resident, setResident] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     axios
       .get(residentEndpoint)
       .then(({ data }) => setResident(data))
       .catch((err) => console.log(err));
   }, []);
-
-  const handleModal = () => {
-    setShowModal(!showModal);
-
-  };
 
   return (
     <>
@@ -55,14 +49,6 @@ const ResidentCard = ({ residentEndpoint }) => {
           </li>
         </ul>
       </article>
-
-      <div className="fixed top-0 w-screen z-10 ">
-        <CharacterModal
-          residents={resident}
-          showModal={showModal}
-          setShowModal={setShowModal}
-        />
-      </div>
     </>
   );
 };
