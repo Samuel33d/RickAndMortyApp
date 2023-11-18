@@ -10,18 +10,6 @@ const Location = ({ location, setLocation }) => {
   const handleInput = (e) => {
     setText(e.target.value);
 
-    // for (let i = 0; i < newLocation.length; i++) {
-    //   if (newLocation[i].name === debounceValue) {
-    //     axios
-    //       .get(
-    //         `https://rickandmortyapi.com/api/location/?name=${debounceValue}`
-    //       )
-    //       .then(({ data }) => {
-    //         setLocation(data.results[0]);
-    //       })
-    //       .catch((err) => console.log(err));
-    //   }
-    // }
   };
 
   useEffect(() => {

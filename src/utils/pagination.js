@@ -1,12 +1,6 @@
 
 const paginationLogic = (currentPage, residents) => {
 
-    // if (residents.length === 0) {
-    //     return {
-    //         pages: [1],
-    //         residentsInPage: []
-    //     }
-    // }
 
     const RESIDENT_PER_PAGE = 6;
 
@@ -21,6 +15,8 @@ const paginationLogic = (currentPage, residents) => {
     for (let i = 1; i <= totalPages; i++) {
         pages.push(i)
     }
+
+
     return {
         residentsInPage,
         pages,

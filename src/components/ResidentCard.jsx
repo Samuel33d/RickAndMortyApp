@@ -2,19 +2,39 @@ import axios from "axios";
 import { IconEye } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { characterStatus } from "../constants/characters";
+import CharacterModal from "./CharacterModal";
 
-const ResidentCard = ({ residentEndpoint, handleModal }) => {
+const ResidentCard = ({ residentEndpoint }) => {
+  const [episode, setEpisode] = useState(null);
+
   const [resident, setResident] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const ENDPOINT = resident?.episode[0];
+
+  const handleModal = () => {
+    setShowModal(true);
+    axios
+      .get(ENDPOINT)
+      .then(({ data }) => setEpisode(data))
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     axios
       .get(residentEndpoint)
       .then(({ data }) => setResident(data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [residentEndpoint]);
 
   return (
     <>
+      <CharacterModal
+        episode={episode}
+        resident={resident}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
       <article className="translate transition-transform  border-[1px] border-[#8EFF8B] bg-transparent">
         <header className=" header overflow-hidden relative border-b-[1px] border-[#8EFF8B]">
           <img src={resident?.image} alt="" />
